@@ -1,5 +1,23 @@
 <p>trendingproducts works!</p>
-<div class="table" >
+<div class='container-fluid'>  
+  <div class="row" style="padding: 20px;">  
+      <div class="col-sm-12 btn btn-success">  
+          Trending Products  
+      </div>  
+  </div>  
+  <div class='col-12'> 
+    <ngb-carousel>   
+    <ng-container *ngFor="let product of trendingproducts">
+    
+        <ng-template ngbSlide>  
+          <div class="carousel-caption">  
+            <h3 style="color: yellow">{{product.ProductCode}}</h3>  
+        </div>  
+            <img src="{{product.BigPhotoUrl}}" alt="{{product.Name}}">  
+          
+        </ng-template>  
+       
    
-    <tr *ngFor="let product of trendingproducts" ><td >{{product.ProductCode}}</td></tr>
-  </div>
+    </ng-container>
+  </ngb-carousel>   
+  
